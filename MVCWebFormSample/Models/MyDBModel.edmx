@@ -1,0 +1,1634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="NorthwindModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.Companies' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Companies">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="CompanyTypeID" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="StateAbbrev" />
+            <PropertyRef Name="Zip" />
+            <PropertyRef Name="StandardTaxStatusID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CompanyTypeID" Type="int" Nullable="false" />
+          <Property Name="BusinessPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="StateAbbrev" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Website" Type="nvarchar(max)" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="StandardTaxStatusID" Type="tinyint" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.CompanyTypes' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CompanyTypes">
+          <Key>
+            <PropertyRef Name="CompanyTypeID" />
+            <PropertyRef Name="CompanyType" />
+          </Key>
+          <Property Name="CompanyTypeID" Type="int" Nullable="false" />
+          <Property Name="CompanyType" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.Contacts' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Contacts">
+          <Key>
+            <PropertyRef Name="ContactID" />
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="JobTitle" />
+          </Key>
+          <Property Name="ContactID" Type="int" Nullable="false" />
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="SecondaryPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.EmployeePrivileges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="EmployeePrivileges">
+          <Key>
+            <PropertyRef Name="EmployeePrivilegeID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="PrivilegeID" />
+          </Key>
+          <Property Name="EmployeePrivilegeID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="PrivilegeID" Type="int" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.Employees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="JobTitle" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="SecondaryPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Title" Type="nvarchar" MaxLength="20" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Attachments" Type="nvarchar(max)" />
+          <Property Name="SupervisorID" Type="int" />
+          <Property Name="WindowsUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.OrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderDetails">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="OrderDetailStatusID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="int" Nullable="false" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="smallint" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="Discount" Type="real" />
+          <Property Name="OrderDetailStatusID" Type="int" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.OrderDetailStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderDetailStatus">
+          <Key>
+            <PropertyRef Name="OrderDetailStatusID" />
+            <PropertyRef Name="OrderDetailStatusName" />
+            <PropertyRef Name="SortOrder" />
+          </Key>
+          <Property Name="OrderDetailStatusID" Type="int" Nullable="false" />
+          <Property Name="OrderDetailStatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SortOrder" Type="tinyint" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.Orders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Orders">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="TaxRate" />
+            <PropertyRef Name="TaxStatusID" />
+            <PropertyRef Name="OrderStatusID" />
+          </Key>
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="OrderDate" Type="datetime" Nullable="false" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="ShippedDate" Type="datetime" />
+          <Property Name="ShipperID" Type="int" />
+          <Property Name="ShippingFee" Type="money" />
+          <Property Name="TaxRate" Type="real" Nullable="false" />
+          <Property Name="TaxStatusID" Type="tinyint" Nullable="false" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaidDate" Type="datetime" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="OrderStatusID" Type="int" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.OrderStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="OrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatusID" />
+            <PropertyRef Name="OrderStatusCode" />
+            <PropertyRef Name="OrderStatusName" />
+            <PropertyRef Name="SortOrder" />
+          </Key>
+          <Property Name="OrderStatusID" Type="int" Nullable="false" />
+          <Property Name="OrderStatusCode" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="OrderStatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SortOrder" Type="tinyint" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.ProductCategories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductCategories">
+          <Key>
+            <PropertyRef Name="ProductCategoryID" />
+            <PropertyRef Name="ProductCategoryName" />
+            <PropertyRef Name="ProductCategoryCode" />
+          </Key>
+          <Property Name="ProductCategoryID" Type="int" Nullable="false" />
+          <Property Name="ProductCategoryName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProductCategoryCode" Type="nvarchar" MaxLength="3" Nullable="false" />
+          <Property Name="ProductCategoryDesc" Type="nvarchar" MaxLength="255" />
+          <Property Name="ProductCategoryImage" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.Products' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Products">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="StandardUnitCost" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="Discontinued" />
+            <PropertyRef Name="ProductCategoryID" />
+          </Key>
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="ProductDescription" Type="nvarchar(max)" />
+          <Property Name="StandardUnitCost" Type="money" Nullable="false" />
+          <Property Name="UnitPrice" Type="money" Nullable="false" />
+          <Property Name="ReorderLevel" Type="smallint" />
+          <Property Name="TargetLevel" Type="smallint" />
+          <Property Name="QuantityPerUnit" Type="nvarchar" MaxLength="50" />
+          <Property Name="Discontinued" Type="bit" Nullable="false" />
+          <Property Name="MinimumReorderQuantity" Type="smallint" />
+          <Property Name="ProductCategoryID" Type="int" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.PurchaseOrderDetails' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PurchaseOrderDetails">
+          <Key>
+            <PropertyRef Name="PurchaseOrderDetailID" />
+            <PropertyRef Name="PurchaseOrderID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="UnitCost" />
+          </Key>
+          <Property Name="PurchaseOrderDetailID" Type="int" Nullable="false" />
+          <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
+          <Property Name="ProductID" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="smallint" Nullable="false" />
+          <Property Name="UnitCost" Type="money" Nullable="false" />
+          <Property Name="ReceivedDate" Type="datetime" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.PurchaseOrders' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PurchaseOrders">
+          <Key>
+            <PropertyRef Name="PurchaseOrderID" />
+            <PropertyRef Name="VendorID" />
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="PurchaseOrderID" Type="int" Nullable="false" />
+          <Property Name="VendorID" Type="int" Nullable="false" />
+          <Property Name="SubmittedByID" Type="int" />
+          <Property Name="SubmittedDate" Type="datetime" />
+          <Property Name="ApprovedByID" Type="int" />
+          <Property Name="ApprovedDate" Type="datetime" />
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="ReceivedDate" Type="datetime" />
+          <Property Name="ShippingFee" Type="money" />
+          <Property Name="TaxAmount" Type="money" />
+          <Property Name="PaymentDate" Type="datetime" />
+          <Property Name="PaymentAmount" Type="money" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.PurchaseOrderStatus' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="PurchaseOrderStatus">
+          <Key>
+            <PropertyRef Name="StatusID" />
+            <PropertyRef Name="StatusName" />
+            <PropertyRef Name="SortOrder" />
+          </Key>
+          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SortOrder" Type="tinyint" Nullable="false" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qrycboCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qrycboCustomers">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qrycboEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qrycboEmployees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="FullNameFNLN" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qryCustomers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qryCustomers">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="int" Nullable="false" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyTypeID" Type="int" />
+          <Property Name="BusinessPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateAbbrev" Type="nvarchar" MaxLength="2" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="Website" Type="nvarchar(max)" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="StandardTaxStatusID" Type="tinyint" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qryEmployeeLogin' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qryEmployeeLogin">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="WindowsUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FullName" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qryEmployeePrivileges' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qryEmployeePrivileges">
+          <Key>
+            <PropertyRef Name="EmployeePrivilegeID" />
+          </Key>
+          <Property Name="EmployeePrivilegeID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="PrivilegeID" Type="int" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qryEmployees' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qryEmployees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="20" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="30" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="255" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="PrimaryPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="SecondaryPhone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Title" Type="nvarchar" MaxLength="20" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Attachments" Type="nvarchar(max)" />
+          <Property Name="SupervisorID" Type="int" />
+          <Property Name="WindowsUserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="FullNameFNLN" Type="nvarchar(max)" />
+          <Property Name="FullNameLNFN" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.qryInvoice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="qryInvoice">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="255" />
+          <Property Name="City" Type="nvarchar" MaxLength="255" />
+          <Property Name="StateAbbrev" Type="nvarchar" MaxLength="2" />
+          <Property Name="Zip" Type="nvarchar" MaxLength="10" />
+          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="CustomerID" Type="int" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="InvoiceDate" Type="datetime" />
+          <Property Name="ShippedDate" Type="datetime" />
+          <Property Name="ShipperID" Type="int" />
+          <Property Name="ShippingFee" Type="money" />
+          <Property Name="TaxRate" Type="real" />
+          <Property Name="TaxStatusID" Type="tinyint" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="50" />
+          <Property Name="PaidDate" Type="datetime" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="OrderStatusID" Type="int" />
+          <Property Name="AddedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="AddedOn" Type="datetime" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="ModifiedOn" Type="datetime" />
+          <Property Name="SalesPerson" Type="nvarchar(max)" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="Quantity" Type="smallint" />
+          <Property Name="UnitPrice" Type="money" />
+          <Property Name="Discount" Type="real" />
+          <Property Name="ProductCode" Type="nvarchar" MaxLength="20" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Northwind.dbo.Welcome' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Welcome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Welcome" Type="nvarchar(max)" />
+          <Property Name="Learn" Type="nvarchar(max)" />
+          <Property Name="DataMacro" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="NorthwindModelStoreContainer">
+          <EntitySet Name="Companies" EntityType="Self.Companies" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Companies].[CompanyID] AS [CompanyID], 
+    [Companies].[CompanyName] AS [CompanyName], 
+    [Companies].[CompanyTypeID] AS [CompanyTypeID], 
+    [Companies].[BusinessPhone] AS [BusinessPhone], 
+    [Companies].[Address] AS [Address], 
+    [Companies].[City] AS [City], 
+    [Companies].[StateAbbrev] AS [StateAbbrev], 
+    [Companies].[Zip] AS [Zip], 
+    [Companies].[Website] AS [Website], 
+    [Companies].[Notes] AS [Notes], 
+    [Companies].[StandardTaxStatusID] AS [StandardTaxStatusID], 
+    [Companies].[AddedBy] AS [AddedBy], 
+    [Companies].[AddedOn] AS [AddedOn], 
+    [Companies].[ModifiedBy] AS [ModifiedBy], 
+    [Companies].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[Companies] AS [Companies]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CompanyTypes" EntityType="Self.CompanyTypes" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CompanyTypes].[CompanyTypeID] AS [CompanyTypeID], 
+    [CompanyTypes].[CompanyType] AS [CompanyType], 
+    [CompanyTypes].[AddedBy] AS [AddedBy], 
+    [CompanyTypes].[AddedOn] AS [AddedOn], 
+    [CompanyTypes].[ModifiedBy] AS [ModifiedBy], 
+    [CompanyTypes].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[CompanyTypes] AS [CompanyTypes]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Contacts" EntityType="Self.Contacts" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Contacts].[ContactID] AS [ContactID], 
+    [Contacts].[CompanyID] AS [CompanyID], 
+    [Contacts].[LastName] AS [LastName], 
+    [Contacts].[FirstName] AS [FirstName], 
+    [Contacts].[EmailAddress] AS [EmailAddress], 
+    [Contacts].[JobTitle] AS [JobTitle], 
+    [Contacts].[PrimaryPhone] AS [PrimaryPhone], 
+    [Contacts].[SecondaryPhone] AS [SecondaryPhone], 
+    [Contacts].[Notes] AS [Notes], 
+    [Contacts].[AddedBy] AS [AddedBy], 
+    [Contacts].[AddedOn] AS [AddedOn], 
+    [Contacts].[ModifiedBy] AS [ModifiedBy], 
+    [Contacts].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[Contacts] AS [Contacts]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="EmployeePrivileges" EntityType="Self.EmployeePrivileges" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [EmployeePrivileges].[EmployeePrivilegeID] AS [EmployeePrivilegeID], 
+    [EmployeePrivileges].[EmployeeID] AS [EmployeeID], 
+    [EmployeePrivileges].[PrivilegeID] AS [PrivilegeID], 
+    [EmployeePrivileges].[AddedBy] AS [AddedBy], 
+    [EmployeePrivileges].[AddedOn] AS [AddedOn], 
+    [EmployeePrivileges].[ModifiedBy] AS [ModifiedBy], 
+    [EmployeePrivileges].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[EmployeePrivileges] AS [EmployeePrivileges]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Employees" EntityType="Self.Employees" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Employees].[EmployeeID] AS [EmployeeID], 
+    [Employees].[FirstName] AS [FirstName], 
+    [Employees].[LastName] AS [LastName], 
+    [Employees].[EmailAddress] AS [EmailAddress], 
+    [Employees].[JobTitle] AS [JobTitle], 
+    [Employees].[PrimaryPhone] AS [PrimaryPhone], 
+    [Employees].[SecondaryPhone] AS [SecondaryPhone], 
+    [Employees].[Title] AS [Title], 
+    [Employees].[Notes] AS [Notes], 
+    [Employees].[Attachments] AS [Attachments], 
+    [Employees].[SupervisorID] AS [SupervisorID], 
+    [Employees].[WindowsUserName] AS [WindowsUserName], 
+    [Employees].[AddedBy] AS [AddedBy], 
+    [Employees].[AddedOn] AS [AddedOn], 
+    [Employees].[ModifiedBy] AS [ModifiedBy], 
+    [Employees].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[Employees] AS [Employees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrderDetails].[OrderDetailID] AS [OrderDetailID], 
+    [OrderDetails].[OrderID] AS [OrderID], 
+    [OrderDetails].[ProductID] AS [ProductID], 
+    [OrderDetails].[Quantity] AS [Quantity], 
+    [OrderDetails].[UnitPrice] AS [UnitPrice], 
+    [OrderDetails].[Discount] AS [Discount], 
+    [OrderDetails].[OrderDetailStatusID] AS [OrderDetailStatusID], 
+    [OrderDetails].[AddedBy] AS [AddedBy], 
+    [OrderDetails].[AddedOn] AS [AddedOn], 
+    [OrderDetails].[ModifiedBy] AS [ModifiedBy], 
+    [OrderDetails].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[OrderDetails] AS [OrderDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OrderDetailStatus" EntityType="Self.OrderDetailStatus" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrderDetailStatus].[OrderDetailStatusID] AS [OrderDetailStatusID], 
+    [OrderDetailStatus].[OrderDetailStatusName] AS [OrderDetailStatusName], 
+    [OrderDetailStatus].[SortOrder] AS [SortOrder], 
+    [OrderDetailStatus].[AddedBy] AS [AddedBy], 
+    [OrderDetailStatus].[AddedOn] AS [AddedOn], 
+    [OrderDetailStatus].[ModifiedBy] AS [ModifiedBy], 
+    [OrderDetailStatus].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[OrderDetailStatus] AS [OrderDetailStatus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Orders" EntityType="Self.Orders" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Orders].[OrderID] AS [OrderID], 
+    [Orders].[EmployeeID] AS [EmployeeID], 
+    [Orders].[CustomerID] AS [CustomerID], 
+    [Orders].[OrderDate] AS [OrderDate], 
+    [Orders].[InvoiceDate] AS [InvoiceDate], 
+    [Orders].[ShippedDate] AS [ShippedDate], 
+    [Orders].[ShipperID] AS [ShipperID], 
+    [Orders].[ShippingFee] AS [ShippingFee], 
+    [Orders].[TaxRate] AS [TaxRate], 
+    [Orders].[TaxStatusID] AS [TaxStatusID], 
+    [Orders].[PaymentMethod] AS [PaymentMethod], 
+    [Orders].[PaidDate] AS [PaidDate], 
+    [Orders].[Notes] AS [Notes], 
+    [Orders].[OrderStatusID] AS [OrderStatusID], 
+    [Orders].[AddedBy] AS [AddedBy], 
+    [Orders].[AddedOn] AS [AddedOn], 
+    [Orders].[ModifiedBy] AS [ModifiedBy], 
+    [Orders].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[Orders] AS [Orders]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [OrderStatus].[OrderStatusID] AS [OrderStatusID], 
+    [OrderStatus].[OrderStatusCode] AS [OrderStatusCode], 
+    [OrderStatus].[OrderStatusName] AS [OrderStatusName], 
+    [OrderStatus].[SortOrder] AS [SortOrder], 
+    [OrderStatus].[AddedBy] AS [AddedBy], 
+    [OrderStatus].[AddedOn] AS [AddedOn], 
+    [OrderStatus].[ModifiedBy] AS [ModifiedBy], 
+    [OrderStatus].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[OrderStatus] AS [OrderStatus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductCategories" EntityType="Self.ProductCategories" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductCategories].[ProductCategoryID] AS [ProductCategoryID], 
+    [ProductCategories].[ProductCategoryName] AS [ProductCategoryName], 
+    [ProductCategories].[ProductCategoryCode] AS [ProductCategoryCode], 
+    [ProductCategories].[ProductCategoryDesc] AS [ProductCategoryDesc], 
+    [ProductCategories].[ProductCategoryImage] AS [ProductCategoryImage], 
+    [ProductCategories].[AddedBy] AS [AddedBy], 
+    [ProductCategories].[AddedOn] AS [AddedOn], 
+    [ProductCategories].[ModifiedBy] AS [ModifiedBy], 
+    [ProductCategories].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[ProductCategories] AS [ProductCategories]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Products" EntityType="Self.Products" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Products].[ProductID] AS [ProductID], 
+    [Products].[ProductCode] AS [ProductCode], 
+    [Products].[ProductName] AS [ProductName], 
+    [Products].[ProductDescription] AS [ProductDescription], 
+    [Products].[StandardUnitCost] AS [StandardUnitCost], 
+    [Products].[UnitPrice] AS [UnitPrice], 
+    [Products].[ReorderLevel] AS [ReorderLevel], 
+    [Products].[TargetLevel] AS [TargetLevel], 
+    [Products].[QuantityPerUnit] AS [QuantityPerUnit], 
+    [Products].[Discontinued] AS [Discontinued], 
+    [Products].[MinimumReorderQuantity] AS [MinimumReorderQuantity], 
+    [Products].[ProductCategoryID] AS [ProductCategoryID], 
+    [Products].[AddedBy] AS [AddedBy], 
+    [Products].[AddedOn] AS [AddedOn], 
+    [Products].[ModifiedBy] AS [ModifiedBy], 
+    [Products].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[Products] AS [Products]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetails" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PurchaseOrderDetails].[PurchaseOrderDetailID] AS [PurchaseOrderDetailID], 
+    [PurchaseOrderDetails].[PurchaseOrderID] AS [PurchaseOrderID], 
+    [PurchaseOrderDetails].[ProductID] AS [ProductID], 
+    [PurchaseOrderDetails].[Quantity] AS [Quantity], 
+    [PurchaseOrderDetails].[UnitCost] AS [UnitCost], 
+    [PurchaseOrderDetails].[ReceivedDate] AS [ReceivedDate], 
+    [PurchaseOrderDetails].[AddedBy] AS [AddedBy], 
+    [PurchaseOrderDetails].[AddedOn] AS [AddedOn], 
+    [PurchaseOrderDetails].[ModifiedBy] AS [ModifiedBy], 
+    [PurchaseOrderDetails].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[PurchaseOrderDetails] AS [PurchaseOrderDetails]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PurchaseOrders" EntityType="Self.PurchaseOrders" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PurchaseOrders].[PurchaseOrderID] AS [PurchaseOrderID], 
+    [PurchaseOrders].[VendorID] AS [VendorID], 
+    [PurchaseOrders].[SubmittedByID] AS [SubmittedByID], 
+    [PurchaseOrders].[SubmittedDate] AS [SubmittedDate], 
+    [PurchaseOrders].[ApprovedByID] AS [ApprovedByID], 
+    [PurchaseOrders].[ApprovedDate] AS [ApprovedDate], 
+    [PurchaseOrders].[StatusID] AS [StatusID], 
+    [PurchaseOrders].[ReceivedDate] AS [ReceivedDate], 
+    [PurchaseOrders].[ShippingFee] AS [ShippingFee], 
+    [PurchaseOrders].[TaxAmount] AS [TaxAmount], 
+    [PurchaseOrders].[PaymentDate] AS [PaymentDate], 
+    [PurchaseOrders].[PaymentAmount] AS [PaymentAmount], 
+    [PurchaseOrders].[PaymentMethod] AS [PaymentMethod], 
+    [PurchaseOrders].[Notes] AS [Notes], 
+    [PurchaseOrders].[AddedBy] AS [AddedBy], 
+    [PurchaseOrders].[AddedOn] AS [AddedOn], 
+    [PurchaseOrders].[ModifiedBy] AS [ModifiedBy], 
+    [PurchaseOrders].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[PurchaseOrders] AS [PurchaseOrders]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="PurchaseOrderStatus" EntityType="Self.PurchaseOrderStatus" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [PurchaseOrderStatus].[StatusID] AS [StatusID], 
+    [PurchaseOrderStatus].[StatusName] AS [StatusName], 
+    [PurchaseOrderStatus].[SortOrder] AS [SortOrder], 
+    [PurchaseOrderStatus].[AddedBy] AS [AddedBy], 
+    [PurchaseOrderStatus].[AddedOn] AS [AddedOn], 
+    [PurchaseOrderStatus].[ModifiedBy] AS [ModifiedBy], 
+    [PurchaseOrderStatus].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[PurchaseOrderStatus] AS [PurchaseOrderStatus]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qrycboCustomers" EntityType="Self.qrycboCustomers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qrycboCustomers].[CompanyID] AS [CompanyID], 
+    [qrycboCustomers].[CompanyName] AS [CompanyName]
+    FROM [dbo].[qrycboCustomers] AS [qrycboCustomers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qrycboEmployees" EntityType="Self.qrycboEmployees" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qrycboEmployees].[EmployeeID] AS [EmployeeID], 
+    [qrycboEmployees].[FullNameFNLN] AS [FullNameFNLN]
+    FROM [dbo].[qrycboEmployees] AS [qrycboEmployees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qryCustomers" EntityType="Self.qryCustomers" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qryCustomers].[CompanyID] AS [CompanyID], 
+    [qryCustomers].[CompanyName] AS [CompanyName], 
+    [qryCustomers].[CompanyTypeID] AS [CompanyTypeID], 
+    [qryCustomers].[BusinessPhone] AS [BusinessPhone], 
+    [qryCustomers].[Address] AS [Address], 
+    [qryCustomers].[City] AS [City], 
+    [qryCustomers].[StateAbbrev] AS [StateAbbrev], 
+    [qryCustomers].[Zip] AS [Zip], 
+    [qryCustomers].[Website] AS [Website], 
+    [qryCustomers].[Notes] AS [Notes], 
+    [qryCustomers].[StandardTaxStatusID] AS [StandardTaxStatusID], 
+    [qryCustomers].[AddedBy] AS [AddedBy], 
+    [qryCustomers].[AddedOn] AS [AddedOn], 
+    [qryCustomers].[ModifiedBy] AS [ModifiedBy], 
+    [qryCustomers].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[qryCustomers] AS [qryCustomers]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qryEmployeeLogin" EntityType="Self.qryEmployeeLogin" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qryEmployeeLogin].[EmployeeID] AS [EmployeeID], 
+    [qryEmployeeLogin].[FirstName] AS [FirstName], 
+    [qryEmployeeLogin].[LastName] AS [LastName], 
+    [qryEmployeeLogin].[EmailAddress] AS [EmailAddress], 
+    [qryEmployeeLogin].[JobTitle] AS [JobTitle], 
+    [qryEmployeeLogin].[WindowsUserName] AS [WindowsUserName], 
+    [qryEmployeeLogin].[FullName] AS [FullName]
+    FROM [dbo].[qryEmployeeLogin] AS [qryEmployeeLogin]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qryEmployeePrivileges" EntityType="Self.qryEmployeePrivileges" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qryEmployeePrivileges].[EmployeePrivilegeID] AS [EmployeePrivilegeID], 
+    [qryEmployeePrivileges].[EmployeeID] AS [EmployeeID], 
+    [qryEmployeePrivileges].[PrivilegeID] AS [PrivilegeID], 
+    [qryEmployeePrivileges].[AddedBy] AS [AddedBy], 
+    [qryEmployeePrivileges].[AddedOn] AS [AddedOn], 
+    [qryEmployeePrivileges].[ModifiedBy] AS [ModifiedBy], 
+    [qryEmployeePrivileges].[ModifiedOn] AS [ModifiedOn]
+    FROM [dbo].[qryEmployeePrivileges] AS [qryEmployeePrivileges]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qryEmployees" EntityType="Self.qryEmployees" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qryEmployees].[EmployeeID] AS [EmployeeID], 
+    [qryEmployees].[FirstName] AS [FirstName], 
+    [qryEmployees].[LastName] AS [LastName], 
+    [qryEmployees].[EmailAddress] AS [EmailAddress], 
+    [qryEmployees].[JobTitle] AS [JobTitle], 
+    [qryEmployees].[PrimaryPhone] AS [PrimaryPhone], 
+    [qryEmployees].[SecondaryPhone] AS [SecondaryPhone], 
+    [qryEmployees].[Title] AS [Title], 
+    [qryEmployees].[Notes] AS [Notes], 
+    [qryEmployees].[Attachments] AS [Attachments], 
+    [qryEmployees].[SupervisorID] AS [SupervisorID], 
+    [qryEmployees].[WindowsUserName] AS [WindowsUserName], 
+    [qryEmployees].[AddedBy] AS [AddedBy], 
+    [qryEmployees].[AddedOn] AS [AddedOn], 
+    [qryEmployees].[ModifiedBy] AS [ModifiedBy], 
+    [qryEmployees].[ModifiedOn] AS [ModifiedOn], 
+    [qryEmployees].[FullNameFNLN] AS [FullNameFNLN], 
+    [qryEmployees].[FullNameLNFN] AS [FullNameLNFN]
+    FROM [dbo].[qryEmployees] AS [qryEmployees]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="qryInvoice" EntityType="Self.qryInvoice" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [qryInvoice].[CompanyName] AS [CompanyName], 
+    [qryInvoice].[Address] AS [Address], 
+    [qryInvoice].[City] AS [City], 
+    [qryInvoice].[StateAbbrev] AS [StateAbbrev], 
+    [qryInvoice].[Zip] AS [Zip], 
+    [qryInvoice].[OrderID] AS [OrderID], 
+    [qryInvoice].[EmployeeID] AS [EmployeeID], 
+    [qryInvoice].[CustomerID] AS [CustomerID], 
+    [qryInvoice].[OrderDate] AS [OrderDate], 
+    [qryInvoice].[InvoiceDate] AS [InvoiceDate], 
+    [qryInvoice].[ShippedDate] AS [ShippedDate], 
+    [qryInvoice].[ShipperID] AS [ShipperID], 
+    [qryInvoice].[ShippingFee] AS [ShippingFee], 
+    [qryInvoice].[TaxRate] AS [TaxRate], 
+    [qryInvoice].[TaxStatusID] AS [TaxStatusID], 
+    [qryInvoice].[PaymentMethod] AS [PaymentMethod], 
+    [qryInvoice].[PaidDate] AS [PaidDate], 
+    [qryInvoice].[Notes] AS [Notes], 
+    [qryInvoice].[OrderStatusID] AS [OrderStatusID], 
+    [qryInvoice].[AddedBy] AS [AddedBy], 
+    [qryInvoice].[AddedOn] AS [AddedOn], 
+    [qryInvoice].[ModifiedBy] AS [ModifiedBy], 
+    [qryInvoice].[ModifiedOn] AS [ModifiedOn], 
+    [qryInvoice].[SalesPerson] AS [SalesPerson], 
+    [qryInvoice].[ProductID] AS [ProductID], 
+    [qryInvoice].[Quantity] AS [Quantity], 
+    [qryInvoice].[UnitPrice] AS [UnitPrice], 
+    [qryInvoice].[Discount] AS [Discount], 
+    [qryInvoice].[ProductCode] AS [ProductCode], 
+    [qryInvoice].[ProductName] AS [ProductName]
+    FROM [dbo].[qryInvoice] AS [qryInvoice]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Welcome" EntityType="Self.Welcome" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Welcome].[ID] AS [ID], 
+    [Welcome].[Welcome] AS [Welcome], 
+    [Welcome].[Learn] AS [Learn], 
+    [Welcome].[DataMacro] AS [DataMacro]
+    FROM [dbo].[Welcome] AS [Welcome]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Company">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="CompanyName" />
+            <PropertyRef Name="CompanyTypeID" />
+            <PropertyRef Name="Address" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="StateAbbrev" />
+            <PropertyRef Name="Zip" />
+            <PropertyRef Name="StandardTaxStatusID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CompanyTypeID" Type="Int32" Nullable="false" />
+          <Property Name="BusinessPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="StateAbbrev" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StandardTaxStatusID" Type="Byte" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="CompanyType">
+          <Key>
+            <PropertyRef Name="CompanyTypeID" />
+            <PropertyRef Name="CompanyType1" />
+          </Key>
+          <Property Name="CompanyTypeID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyType1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Contact">
+          <Key>
+            <PropertyRef Name="ContactID" />
+            <PropertyRef Name="CompanyID" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="JobTitle" />
+          </Key>
+          <Property Name="ContactID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="EmployeePrivilege">
+          <Key>
+            <PropertyRef Name="EmployeePrivilegeID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="PrivilegeID" />
+          </Key>
+          <Property Name="EmployeePrivilegeID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="PrivilegeID" Type="Int32" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="FirstName" />
+            <PropertyRef Name="LastName" />
+            <PropertyRef Name="JobTitle" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Attachments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupervisorID" Type="Int32" />
+          <Property Name="WindowsUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderDetail">
+          <Key>
+            <PropertyRef Name="OrderDetailID" />
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="OrderDetailStatusID" />
+          </Key>
+          <Property Name="OrderDetailID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="Discount" Type="Single" />
+          <Property Name="OrderDetailStatusID" Type="Int32" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderDetailStatu">
+          <Key>
+            <PropertyRef Name="OrderDetailStatusID" />
+            <PropertyRef Name="OrderDetailStatusName" />
+            <PropertyRef Name="SortOrder" />
+          </Key>
+          <Property Name="OrderDetailStatusID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDetailStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SortOrder" Type="Byte" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderID" />
+            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="CustomerID" />
+            <PropertyRef Name="OrderDate" />
+            <PropertyRef Name="TaxRate" />
+            <PropertyRef Name="TaxStatusID" />
+            <PropertyRef Name="OrderStatusID" />
+          </Key>
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+          <Property Name="ShipperID" Type="Int32" />
+          <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaxRate" Type="Single" Nullable="false" />
+          <Property Name="TaxStatusID" Type="Byte" Nullable="false" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaidDate" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="OrderStatu">
+          <Key>
+            <PropertyRef Name="OrderStatusID" />
+            <PropertyRef Name="OrderStatusCode" />
+            <PropertyRef Name="OrderStatusName" />
+            <PropertyRef Name="SortOrder" />
+          </Key>
+          <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
+          <Property Name="OrderStatusCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrderStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SortOrder" Type="Byte" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="ProductCategoryID" />
+            <PropertyRef Name="ProductCategoryName" />
+            <PropertyRef Name="ProductCategoryCode" />
+          </Key>
+          <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="ProductCategoryName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductCategoryCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductCategoryDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProductCategoryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="ProductCode" />
+            <PropertyRef Name="ProductName" />
+            <PropertyRef Name="StandardUnitCost" />
+            <PropertyRef Name="UnitPrice" />
+            <PropertyRef Name="Discontinued" />
+            <PropertyRef Name="ProductCategoryID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StandardUnitCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ReorderLevel" Type="Int16" />
+          <Property Name="TargetLevel" Type="Int16" />
+          <Property Name="QuantityPerUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+          <Property Name="MinimumReorderQuantity" Type="Int16" />
+          <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderDetail">
+          <Key>
+            <PropertyRef Name="PurchaseOrderDetailID" />
+            <PropertyRef Name="PurchaseOrderID" />
+            <PropertyRef Name="ProductID" />
+            <PropertyRef Name="Quantity" />
+            <PropertyRef Name="UnitCost" />
+          </Key>
+          <Property Name="PurchaseOrderDetailID" Type="Int32" Nullable="false" />
+          <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
+          <Property Name="ProductID" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Int16" Nullable="false" />
+          <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PurchaseOrder">
+          <Key>
+            <PropertyRef Name="PurchaseOrderID" />
+            <PropertyRef Name="VendorID" />
+            <PropertyRef Name="StatusID" />
+          </Key>
+          <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
+          <Property Name="VendorID" Type="Int32" Nullable="false" />
+          <Property Name="SubmittedByID" Type="Int32" />
+          <Property Name="SubmittedDate" Type="DateTime" Precision="3" />
+          <Property Name="ApprovedByID" Type="Int32" />
+          <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+          <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaxAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+          <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PurchaseOrderStatu">
+          <Key>
+            <PropertyRef Name="StatusID" />
+            <PropertyRef Name="StatusName" />
+            <PropertyRef Name="SortOrder" />
+          </Key>
+          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SortOrder" Type="Byte" Nullable="false" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="qrycboCustomer">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="qrycboEmployee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="FullNameFNLN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="qryCustomer">
+          <Key>
+            <PropertyRef Name="CompanyID" />
+          </Key>
+          <Property Name="CompanyID" Type="Int32" Nullable="false" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyTypeID" Type="Int32" />
+          <Property Name="BusinessPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StateAbbrev" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="StandardTaxStatusID" Type="Byte" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="qryEmployeeLogin">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WindowsUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="qryEmployeePrivilege">
+          <Key>
+            <PropertyRef Name="EmployeePrivilegeID" />
+          </Key>
+          <Property Name="EmployeePrivilegeID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="PrivilegeID" Type="Int32" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="qryEmployee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="SecondaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Attachments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SupervisorID" Type="Int32" />
+          <Property Name="WindowsUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="FullNameFNLN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FullNameLNFN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="qryInvoice">
+          <Key>
+            <PropertyRef Name="OrderID" />
+          </Key>
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="StateAbbrev" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+          <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="CustomerID" Type="Int32" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+          <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+          <Property Name="ShipperID" Type="Int32" />
+          <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="TaxRate" Type="Single" />
+          <Property Name="TaxStatusID" Type="Byte" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PaidDate" Type="DateTime" Precision="3" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="OrderStatusID" Type="Int32" />
+          <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="AddedOn" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+          <Property Name="SalesPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="Quantity" Type="Int16" />
+          <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Discount" Type="Single" />
+          <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Welcome">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Welcome1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Learn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DataMacro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="NorthwindEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Companies" EntityType="Self.Company" />
+          <EntitySet Name="CompanyTypes" EntityType="Self.CompanyType" />
+          <EntitySet Name="Contacts" EntityType="Self.Contact" />
+          <EntitySet Name="EmployeePrivileges" EntityType="Self.EmployeePrivilege" />
+          <EntitySet Name="Employees" EntityType="Self.Employee" />
+          <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+          <EntitySet Name="OrderDetailStatus" EntityType="Self.OrderDetailStatu" />
+          <EntitySet Name="Orders" EntityType="Self.Order" />
+          <EntitySet Name="OrderStatus" EntityType="Self.OrderStatu" />
+          <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+          <EntitySet Name="Products" EntityType="Self.Product" />
+          <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetail" />
+          <EntitySet Name="PurchaseOrders" EntityType="Self.PurchaseOrder" />
+          <EntitySet Name="PurchaseOrderStatus" EntityType="Self.PurchaseOrderStatu" />
+          <EntitySet Name="qrycboCustomers" EntityType="Self.qrycboCustomer" />
+          <EntitySet Name="qrycboEmployees" EntityType="Self.qrycboEmployee" />
+          <EntitySet Name="qryCustomers" EntityType="Self.qryCustomer" />
+          <EntitySet Name="qryEmployeeLogins" EntityType="Self.qryEmployeeLogin" />
+          <EntitySet Name="qryEmployeePrivileges" EntityType="Self.qryEmployeePrivilege" />
+          <EntitySet Name="qryEmployees" EntityType="Self.qryEmployee" />
+          <EntitySet Name="qryInvoices" EntityType="Self.qryInvoice" />
+          <EntitySet Name="Welcomes" EntityType="Self.Welcome" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="NorthwindModelStoreContainer" CdmEntityContainer="NorthwindEntities">
+          <EntitySetMapping Name="Companies">
+            <EntityTypeMapping TypeName="NorthwindModel.Company">
+              <MappingFragment StoreEntitySet="Companies">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyTypeID" ColumnName="CompanyTypeID" />
+                <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateAbbrev" ColumnName="StateAbbrev" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="StandardTaxStatusID" ColumnName="StandardTaxStatusID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CompanyTypes">
+            <EntityTypeMapping TypeName="NorthwindModel.CompanyType">
+              <MappingFragment StoreEntitySet="CompanyTypes">
+                <ScalarProperty Name="CompanyTypeID" ColumnName="CompanyTypeID" />
+                <ScalarProperty Name="CompanyType1" ColumnName="CompanyType" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Contacts">
+            <EntityTypeMapping TypeName="NorthwindModel.Contact">
+              <MappingFragment StoreEntitySet="Contacts">
+                <ScalarProperty Name="ContactID" ColumnName="ContactID" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="SecondaryPhone" ColumnName="SecondaryPhone" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EmployeePrivileges">
+            <EntityTypeMapping TypeName="NorthwindModel.EmployeePrivilege">
+              <MappingFragment StoreEntitySet="EmployeePrivileges">
+                <ScalarProperty Name="EmployeePrivilegeID" ColumnName="EmployeePrivilegeID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="PrivilegeID" ColumnName="PrivilegeID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="NorthwindModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="SecondaryPhone" ColumnName="SecondaryPhone" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="SupervisorID" ColumnName="SupervisorID" />
+                <ScalarProperty Name="WindowsUserName" ColumnName="WindowsUserName" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetails">
+            <EntityTypeMapping TypeName="NorthwindModel.OrderDetail">
+              <MappingFragment StoreEntitySet="OrderDetails">
+                <ScalarProperty Name="OrderDetailID" ColumnName="OrderDetailID" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="OrderDetailStatusID" ColumnName="OrderDetailStatusID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderDetailStatus">
+            <EntityTypeMapping TypeName="NorthwindModel.OrderDetailStatu">
+              <MappingFragment StoreEntitySet="OrderDetailStatus">
+                <ScalarProperty Name="OrderDetailStatusID" ColumnName="OrderDetailStatusID" />
+                <ScalarProperty Name="OrderDetailStatusName" ColumnName="OrderDetailStatusName" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Orders">
+            <EntityTypeMapping TypeName="NorthwindModel.Order">
+              <MappingFragment StoreEntitySet="Orders">
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="ShippingFee" ColumnName="ShippingFee" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="TaxStatusID" ColumnName="TaxStatusID" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OrderStatusID" ColumnName="OrderStatusID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrderStatus">
+            <EntityTypeMapping TypeName="NorthwindModel.OrderStatu">
+              <MappingFragment StoreEntitySet="OrderStatus">
+                <ScalarProperty Name="OrderStatusID" ColumnName="OrderStatusID" />
+                <ScalarProperty Name="OrderStatusCode" ColumnName="OrderStatusCode" />
+                <ScalarProperty Name="OrderStatusName" ColumnName="OrderStatusName" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductCategories">
+            <EntityTypeMapping TypeName="NorthwindModel.ProductCategory">
+              <MappingFragment StoreEntitySet="ProductCategories">
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+                <ScalarProperty Name="ProductCategoryName" ColumnName="ProductCategoryName" />
+                <ScalarProperty Name="ProductCategoryCode" ColumnName="ProductCategoryCode" />
+                <ScalarProperty Name="ProductCategoryDesc" ColumnName="ProductCategoryDesc" />
+                <ScalarProperty Name="ProductCategoryImage" ColumnName="ProductCategoryImage" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="NorthwindModel.Product">
+              <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductDescription" ColumnName="ProductDescription" />
+                <ScalarProperty Name="StandardUnitCost" ColumnName="StandardUnitCost" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="ReorderLevel" ColumnName="ReorderLevel" />
+                <ScalarProperty Name="TargetLevel" ColumnName="TargetLevel" />
+                <ScalarProperty Name="QuantityPerUnit" ColumnName="QuantityPerUnit" />
+                <ScalarProperty Name="Discontinued" ColumnName="Discontinued" />
+                <ScalarProperty Name="MinimumReorderQuantity" ColumnName="MinimumReorderQuantity" />
+                <ScalarProperty Name="ProductCategoryID" ColumnName="ProductCategoryID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrderDetails">
+            <EntityTypeMapping TypeName="NorthwindModel.PurchaseOrderDetail">
+              <MappingFragment StoreEntitySet="PurchaseOrderDetails">
+                <ScalarProperty Name="PurchaseOrderDetailID" ColumnName="PurchaseOrderDetailID" />
+                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrders">
+            <EntityTypeMapping TypeName="NorthwindModel.PurchaseOrder">
+              <MappingFragment StoreEntitySet="PurchaseOrders">
+                <ScalarProperty Name="PurchaseOrderID" ColumnName="PurchaseOrderID" />
+                <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+                <ScalarProperty Name="SubmittedByID" ColumnName="SubmittedByID" />
+                <ScalarProperty Name="SubmittedDate" ColumnName="SubmittedDate" />
+                <ScalarProperty Name="ApprovedByID" ColumnName="ApprovedByID" />
+                <ScalarProperty Name="ApprovedDate" ColumnName="ApprovedDate" />
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="ReceivedDate" ColumnName="ReceivedDate" />
+                <ScalarProperty Name="ShippingFee" ColumnName="ShippingFee" />
+                <ScalarProperty Name="TaxAmount" ColumnName="TaxAmount" />
+                <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+                <ScalarProperty Name="PaymentAmount" ColumnName="PaymentAmount" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PurchaseOrderStatus">
+            <EntityTypeMapping TypeName="NorthwindModel.PurchaseOrderStatu">
+              <MappingFragment StoreEntitySet="PurchaseOrderStatus">
+                <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="SortOrder" ColumnName="SortOrder" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qrycboCustomers">
+            <EntityTypeMapping TypeName="NorthwindModel.qrycboCustomer">
+              <MappingFragment StoreEntitySet="qrycboCustomers">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qrycboEmployees">
+            <EntityTypeMapping TypeName="NorthwindModel.qrycboEmployee">
+              <MappingFragment StoreEntitySet="qrycboEmployees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FullNameFNLN" ColumnName="FullNameFNLN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qryCustomers">
+            <EntityTypeMapping TypeName="NorthwindModel.qryCustomer">
+              <MappingFragment StoreEntitySet="qryCustomers">
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="CompanyTypeID" ColumnName="CompanyTypeID" />
+                <ScalarProperty Name="BusinessPhone" ColumnName="BusinessPhone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateAbbrev" ColumnName="StateAbbrev" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="Website" ColumnName="Website" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="StandardTaxStatusID" ColumnName="StandardTaxStatusID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qryEmployeeLogins">
+            <EntityTypeMapping TypeName="NorthwindModel.qryEmployeeLogin">
+              <MappingFragment StoreEntitySet="qryEmployeeLogin">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="WindowsUserName" ColumnName="WindowsUserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qryEmployeePrivileges">
+            <EntityTypeMapping TypeName="NorthwindModel.qryEmployeePrivilege">
+              <MappingFragment StoreEntitySet="qryEmployeePrivileges">
+                <ScalarProperty Name="EmployeePrivilegeID" ColumnName="EmployeePrivilegeID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="PrivilegeID" ColumnName="PrivilegeID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qryEmployees">
+            <EntityTypeMapping TypeName="NorthwindModel.qryEmployee">
+              <MappingFragment StoreEntitySet="qryEmployees">
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="SecondaryPhone" ColumnName="SecondaryPhone" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Attachments" ColumnName="Attachments" />
+                <ScalarProperty Name="SupervisorID" ColumnName="SupervisorID" />
+                <ScalarProperty Name="WindowsUserName" ColumnName="WindowsUserName" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="FullNameFNLN" ColumnName="FullNameFNLN" />
+                <ScalarProperty Name="FullNameLNFN" ColumnName="FullNameLNFN" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="qryInvoices">
+            <EntityTypeMapping TypeName="NorthwindModel.qryInvoice">
+              <MappingFragment StoreEntitySet="qryInvoice">
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="StateAbbrev" ColumnName="StateAbbrev" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="OrderID" ColumnName="OrderID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="InvoiceDate" ColumnName="InvoiceDate" />
+                <ScalarProperty Name="ShippedDate" ColumnName="ShippedDate" />
+                <ScalarProperty Name="ShipperID" ColumnName="ShipperID" />
+                <ScalarProperty Name="ShippingFee" ColumnName="ShippingFee" />
+                <ScalarProperty Name="TaxRate" ColumnName="TaxRate" />
+                <ScalarProperty Name="TaxStatusID" ColumnName="TaxStatusID" />
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OrderStatusID" ColumnName="OrderStatusID" />
+                <ScalarProperty Name="AddedBy" ColumnName="AddedBy" />
+                <ScalarProperty Name="AddedOn" ColumnName="AddedOn" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedOn" ColumnName="ModifiedOn" />
+                <ScalarProperty Name="SalesPerson" ColumnName="SalesPerson" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="UnitPrice" ColumnName="UnitPrice" />
+                <ScalarProperty Name="Discount" ColumnName="Discount" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Welcomes">
+            <EntityTypeMapping TypeName="NorthwindModel.Welcome">
+              <MappingFragment StoreEntitySet="Welcome">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Welcome1" ColumnName="Welcome" />
+                <ScalarProperty Name="Learn" ColumnName="Learn" />
+                <ScalarProperty Name="DataMacro" ColumnName="DataMacro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
