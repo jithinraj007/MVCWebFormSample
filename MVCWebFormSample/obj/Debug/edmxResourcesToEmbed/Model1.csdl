@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="NorthwindModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="CompanyName" />
+      <PropertyRef Name="CompanyTypeID" />
+      <PropertyRef Name="Address" />
+      <PropertyRef Name="City" />
+      <PropertyRef Name="StateAbbrev" />
+      <PropertyRef Name="Zip" />
+      <PropertyRef Name="StandardTaxStatusID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyTypeID" Type="Int32" Nullable="false" />
+    <Property Name="BusinessPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StateAbbrev" Type="String" MaxLength="2" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StandardTaxStatusID" Type="Byte" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ContactID" />
+      <PropertyRef Name="CompanyID" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="JobTitle" />
+    </Key>
+    <Property Name="ContactID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PrimaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="FirstName" />
+      <PropertyRef Name="LastName" />
+      <PropertyRef Name="JobTitle" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PrimaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attachments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SupervisorID" Type="Int32" />
+    <Property Name="WindowsUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="OrderDetail">
+    <Key>
+      <PropertyRef Name="OrderDetailID" />
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Quantity" />
+      <PropertyRef Name="UnitPrice" />
+      <PropertyRef Name="OrderDetailStatusID" />
+    </Key>
+    <Property Name="OrderDetailID" Type="Int32" Nullable="false" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="Discount" Type="Single" />
+    <Property Name="OrderDetailStatusID" Type="Int32" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="OrderDetailStatu">
+    <Key>
+      <PropertyRef Name="OrderDetailStatusID" />
+      <PropertyRef Name="OrderDetailStatusName" />
+      <PropertyRef Name="SortOrder" />
+    </Key>
+    <Property Name="OrderDetailStatusID" Type="Int32" Nullable="false" />
+    <Property Name="OrderDetailStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SortOrder" Type="Byte" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="OrderID" />
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="CustomerID" />
+      <PropertyRef Name="OrderDate" />
+      <PropertyRef Name="TaxRate" />
+      <PropertyRef Name="TaxStatusID" />
+      <PropertyRef Name="OrderStatusID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="CustomerID" Type="Int32" Nullable="false" />
+    <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipperID" Type="Int32" />
+    <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TaxRate" Type="Single" Nullable="false" />
+    <Property Name="TaxStatusID" Type="Byte" Nullable="false" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="OrderStatu">
+    <Key>
+      <PropertyRef Name="OrderStatusID" />
+      <PropertyRef Name="OrderStatusCode" />
+      <PropertyRef Name="OrderStatusName" />
+      <PropertyRef Name="SortOrder" />
+    </Key>
+    <Property Name="OrderStatusID" Type="Int32" Nullable="false" />
+    <Property Name="OrderStatusCode" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrderStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SortOrder" Type="Byte" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="ProductCategory">
+    <Key>
+      <PropertyRef Name="ProductCategoryID" />
+      <PropertyRef Name="ProductCategoryName" />
+      <PropertyRef Name="ProductCategoryCode" />
+    </Key>
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCategoryName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductCategoryCode" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductCategoryDesc" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ProductCategoryImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="ProductCode" />
+      <PropertyRef Name="ProductName" />
+      <PropertyRef Name="StandardUnitCost" />
+      <PropertyRef Name="UnitPrice" />
+      <PropertyRef Name="Discontinued" />
+      <PropertyRef Name="ProductCategoryID" />
+    </Key>
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ProductDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StandardUnitCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ReorderLevel" Type="Int16" />
+    <Property Name="TargetLevel" Type="Int16" />
+    <Property Name="QuantityPerUnit" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Discontinued" Type="Boolean" Nullable="false" />
+    <Property Name="MinimumReorderQuantity" Type="Int16" />
+    <Property Name="ProductCategoryID" Type="Int32" Nullable="false" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PurchaseOrderDetail">
+    <Key>
+      <PropertyRef Name="PurchaseOrderDetailID" />
+      <PropertyRef Name="PurchaseOrderID" />
+      <PropertyRef Name="ProductID" />
+      <PropertyRef Name="Quantity" />
+      <PropertyRef Name="UnitCost" />
+    </Key>
+    <Property Name="PurchaseOrderDetailID" Type="Int32" Nullable="false" />
+    <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" Nullable="false" />
+    <Property Name="Quantity" Type="Int16" Nullable="false" />
+    <Property Name="UnitCost" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="PurchaseOrder">
+    <Key>
+      <PropertyRef Name="PurchaseOrderID" />
+      <PropertyRef Name="VendorID" />
+      <PropertyRef Name="StatusID" />
+    </Key>
+    <Property Name="PurchaseOrderID" Type="Int32" Nullable="false" />
+    <Property Name="VendorID" Type="Int32" Nullable="false" />
+    <Property Name="SubmittedByID" Type="Int32" />
+    <Property Name="SubmittedDate" Type="DateTime" Precision="3" />
+    <Property Name="ApprovedByID" Type="Int32" />
+    <Property Name="ApprovedDate" Type="DateTime" Precision="3" />
+    <Property Name="StatusID" Type="Int32" Nullable="false" />
+    <Property Name="ReceivedDate" Type="DateTime" Precision="3" />
+    <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TaxAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="PaymentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="qrycboCustomer">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qrycboEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FullNameFNLN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qryCustomer">
+    <Key>
+      <PropertyRef Name="CompanyID" />
+    </Key>
+    <Property Name="CompanyID" Type="Int32" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyTypeID" Type="Int32" />
+    <Property Name="BusinessPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateAbbrev" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Website" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="StandardTaxStatusID" Type="Byte" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="qryEmployeeLogin">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="WindowsUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FullName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qryEmployee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PrimaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SecondaryPhone" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Attachments" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SupervisorID" Type="Int32" />
+    <Property Name="WindowsUserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="FullNameFNLN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FullNameLNFN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qryInvoice">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="StateAbbrev" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="Zip" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipperID" Type="Int32" />
+    <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TaxRate" Type="Single" />
+    <Property Name="TaxStatusID" Type="Byte" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderStatusID" Type="Int32" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="SalesPerson" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ProductID" Type="Int32" />
+    <Property Name="Quantity" Type="Int16" />
+    <Property Name="UnitPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Single" />
+    <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="ProductName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="qryOrder">
+    <Key>
+      <PropertyRef Name="OrderID" />
+    </Key>
+    <Property Name="OrderID" Type="Int32" Nullable="false" />
+    <Property Name="EmployeeID" Type="Int32" />
+    <Property Name="CustomerID" Type="Int32" />
+    <Property Name="OrderDate" Type="DateTime" Precision="3" />
+    <Property Name="InvoiceDate" Type="DateTime" Precision="3" />
+    <Property Name="ShippedDate" Type="DateTime" Precision="3" />
+    <Property Name="ShipperID" Type="Int32" />
+    <Property Name="ShippingFee" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TaxRate" Type="Single" />
+    <Property Name="TaxStatusID" Type="Byte" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="OrderStatusID" Type="Int32" />
+    <Property Name="AddedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="AddedOn" Type="DateTime" Precision="3" />
+    <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ModifiedOn" Type="DateTime" Precision="3" />
+    <Property Name="OrderStatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserSetting">
+    <Key>
+      <PropertyRef Name="SettingID" />
+      <PropertyRef Name="SettingName" />
+    </Key>
+    <Property Name="SettingID" Type="Int32" Nullable="false" />
+    <Property Name="SettingName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SettingValue" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Welcome">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Welcome1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Learn" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DataMacro" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="NorthwindEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="Contacts" EntityType="Self.Contact" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="OrderDetails" EntityType="Self.OrderDetail" />
+    <EntitySet Name="OrderDetailStatus" EntityType="Self.OrderDetailStatu" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatu" />
+    <EntitySet Name="ProductCategories" EntityType="Self.ProductCategory" />
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="PurchaseOrderDetails" EntityType="Self.PurchaseOrderDetail" />
+    <EntitySet Name="PurchaseOrders" EntityType="Self.PurchaseOrder" />
+    <EntitySet Name="qrycboCustomers" EntityType="Self.qrycboCustomer" />
+    <EntitySet Name="qrycboEmployees" EntityType="Self.qrycboEmployee" />
+    <EntitySet Name="qryCustomers" EntityType="Self.qryCustomer" />
+    <EntitySet Name="qryEmployeeLogins" EntityType="Self.qryEmployeeLogin" />
+    <EntitySet Name="qryEmployees" EntityType="Self.qryEmployee" />
+    <EntitySet Name="qryInvoices" EntityType="Self.qryInvoice" />
+    <EntitySet Name="qryOrders" EntityType="Self.qryOrder" />
+    <EntitySet Name="UserSettings" EntityType="Self.UserSetting" />
+    <EntitySet Name="Welcomes" EntityType="Self.Welcome" />
+  </EntityContainer>
+</Schema>

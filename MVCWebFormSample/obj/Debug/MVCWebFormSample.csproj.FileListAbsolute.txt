@@ -53,6 +53,8 @@ D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\r
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\Antlr3.Runtime.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\AspNet.ScriptManager.bootstrap.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\AspNet.ScriptManager.jQuery.dll
+D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\EntityFramework.dll
+D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\EntityFramework.SqlServer.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\Microsoft.AspNet.FriendlyUrls.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
@@ -68,6 +70,8 @@ D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\S
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\System.Web.Webpages.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\System.Web.Webpages.Razor.dll
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\WebGrease.dll
+D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\EntityFramework.xml
+D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\EntityFramework.SqlServer.xml
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\System.Web.Optimization.xml
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\Newtonsoft.Json.xml
 D:\Jithin Projects\Learning\MVC Training\MVCWebFormSample\MVCWebFormSample\bin\Antlr3.Runtime.pdb
